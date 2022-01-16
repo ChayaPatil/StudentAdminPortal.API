@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StudentAdminPortal.API.DataModels
+namespace StudentAdminPortal.API.DomainModels
 {
     public class Address
     {
@@ -8,7 +8,6 @@ namespace StudentAdminPortal.API.DataModels
         public string PhysicalAddress { get; set; }
         public string PostalAddress { get; set; }
 
-        // Navigation Property
         public Guid StudentId { get; set; }
     }
 }

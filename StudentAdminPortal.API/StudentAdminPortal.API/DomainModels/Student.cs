@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StudentAdminPortal.API.DataModels
+namespace StudentAdminPortal.API.DomainModels
 {
     public class Student
     {
@@ -12,8 +12,6 @@ namespace StudentAdminPortal.API.DataModels
         public long Mobile { get; set; }
         public string ProfileImageUrl { get; set; }
         public Guid GenderId { get; set; }
-
-        // Navigation Properties
         public Gender Gender { get; set; }
         public Address Address { get; set; }
     }
