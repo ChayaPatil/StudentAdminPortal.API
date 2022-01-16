@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace StudentAdminPortal.API.Controllers
-{
+{  
     [ApiController]
     public class GendersController : Controller
     {
@@ -18,6 +18,19 @@ namespace StudentAdminPortal.API.Controllers
         {
             this.studentRepository = studentRepository;
             this.mapper = mapper;
+        }
+
+        [HttpGet]
+        [Route("[controller]")]
+        public async Task<IActionResult> GetGendersAsync()
+        {
+            var genderList = await studentRepository.GetGendersAsync();
+
+            if (genderList == null | !genderList.Any())
+            {
+                return NotFound();
+            }
+            return Ok(mapper.Map<List<Gender>>(genderList));
         }
 
     }
